@@ -1,0 +1,17 @@
+* HackDepot Dockerfile
+  A Dockerfile for [[https://docker.com/][Docker]] that aims to simplify [[https://github.com/cadrspace/hackdepot][HackDepot]] deployment.
+  Note that the produced image will contain the version of the
+  application from the =master= branch (which may be unstable.)
+** Building
+#+BEGIN_EXAMPLE
+$ git clone https://github.com/cadrspace/hackdepot-docker.git
+$ cd hackdepot-docker
+$ docker build -t cadr/hackdepot .
+#+END_EXAMPLE
+** Running
+#+BEGIN_EXAMPLE
+$ docker run -itp 3000:3000 cadr/hackdepot \
+  bash -c "cd /srv/hackdepot \
+    && SECRET_KEY_BASE=<key> ./hackdepot \
+    && while true; do sleep 1; done" 
+#+END_EXAMPLE
