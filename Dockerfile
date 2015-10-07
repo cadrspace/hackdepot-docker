@@ -1,7 +1,7 @@
 # Dockerfile for HackDepot
 
 FROM 32bit/debian:jessie
-MAINTAINER Artyom V. Poptsov <poptsov.artyom@gmail.com>
+MAINTAINER Artyom V. Poptsov -- poptsov.artyom@gmail.com
 
 # Import the needed GPG keys.
 RUN gpg --keyserver hkp://keys.gnupg.net \
