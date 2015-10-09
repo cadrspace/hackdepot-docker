@@ -19,7 +19,7 @@ $ docker build -t cadr/hackdepot .
 ** Running
    The application consists of two images:
    - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/hackdepot]]
-   - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/32bit-debian-mongo]]
+   - [[https://hub.docker.com/r/cadr/32bit-debian-mongo/][cadr/32bit-debian-mongo]]
 
    You can run the application using =docker-compose= command as
    follows:
