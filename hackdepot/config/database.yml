@@ -1,0 +1,9 @@
+development:
+  adapter:  mongoid
+  host:     mongo
+  database: hackdepot_development
+
+production:
+  adapter:  mongoid
+  host:     mongo
+  database: hackdepot_production

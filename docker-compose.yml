@@ -1,0 +1,8 @@
+hackdepot:
+  image: cadr/hackdepot
+  ports:
+    - "3000:3000"
+  links:
+    - mongo
+mongo:
+  image: cadr/32bit-debian-mongo
