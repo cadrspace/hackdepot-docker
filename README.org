@@ -2,6 +2,10 @@
   A Dockerfile for [[https://docker.com/][Docker]] that aims to simplify [[https://github.com/cadrspace/hackdepot][HackDepot]] deployment.
   Note that the produced image will contain the version of the
   application from the =master= branch (which may be unstable.)
+
+  The application consists of two images:
+   - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/hackdepot]]
+   - [[https://hub.docker.com/r/cadr/32bit-debian-mongo/][cadr/32bit-debian-mongo]]
 ** Getting the sources
 #+BEGIN_EXAMPLE
 $ git clone https://github.com/cadrspace/hackdepot-docker.git
@@ -17,10 +21,6 @@ $ cd $REPO_ROOT/hackdepot
 $ docker build -t cadr/hackdepot .
 #+END_EXAMPLE
 ** Running
-   The application consists of two images:
-   - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/hackdepot]]
-   - [[https://hub.docker.com/r/cadr/32bit-debian-mongo/][cadr/32bit-debian-mongo]]
-
    You can run the application using =docker-compose= command as
    follows:
 #+BEGIN_EXAMPLE
