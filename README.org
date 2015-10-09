@@ -2,16 +2,31 @@
   A Dockerfile for [[https://docker.com/][Docker]] that aims to simplify [[https://github.com/cadrspace/hackdepot][HackDepot]] deployment.
   Note that the produced image will contain the version of the
   application from the =master= branch (which may be unstable.)
-** Building
+** Getting the sources
 #+BEGIN_EXAMPLE
 $ git clone https://github.com/cadrspace/hackdepot-docker.git
-$ cd hackdepot-docker
+$ export REPO_ROOT=$(pwd)/hackdepot-docker
+#+END_EXAMPLE
+** Building
+   This step is optional if you just can run HackDepot, because you
+   can get the image from Docker Hub.  Nevertheless, rebuilding is
+   required if you, for example, made some changes and want to test
+   them.
+#+BEGIN_EXAMPLE
+$ cd $REPO_ROOT/hackdepot
 $ docker build -t cadr/hackdepot .
 #+END_EXAMPLE
 ** Running
+   The application consists of two images:
+   - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/hackdepot]]
+   - [[https://hub.docker.com/r/cadr/hackdepot/][cadr/32bit-debian-mongo]]
+
+   You can run the application using =docker-compose= command as
+   follwos:
 #+BEGIN_EXAMPLE
-$ docker run -itp 3000:3000 cadr/hackdepot \
-  bash -c "cd /srv/hackdepot \
-    && SECRET_KEY_BASE=<key> ./hackdepot \
-    && while true; do sleep 1; done" 
+$ cd $REPO_ROOT
+$ docker-compose up
 #+END_EXAMPLE
+
+   When started, the application should be listening on the port 3000
+   on the host.
