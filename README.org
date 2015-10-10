@@ -12,7 +12,7 @@ $ git clone https://github.com/cadrspace/hackdepot-docker.git
 $ export REPO_ROOT=$(pwd)/hackdepot-docker
 #+END_EXAMPLE
 ** Building
-   This step is optional if you just can run HackDepot, because you
+   This step is optional if you just want run HackDepot, because you
    can get the image from Docker Hub.  Nevertheless, rebuilding is
    required if you, for example, made some changes and want to test
    them.
